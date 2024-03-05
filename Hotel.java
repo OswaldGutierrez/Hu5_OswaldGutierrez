@@ -30,8 +30,8 @@ public class Hotel {
 
     public void reservarHabitacion() {
 
-        piso = in.leerInt("¿En qué piso quiere su habitación?");
-        numero = in.leerInt("¿Cuál de las habitaciones desea?");
+        piso = in.leeryValidarInt("¿En qué piso quiere su habitación?");
+        numero = in.leeryValidarInt("¿Cuál de las habitaciones desea?");
 
         if (piso >= 1 && piso <= 2 && numero >= 1 && numero <= 5) {
             if (habitaciones[piso - 1][numero - 1].equals("Disponible")) {

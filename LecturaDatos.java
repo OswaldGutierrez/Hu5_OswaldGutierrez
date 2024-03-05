@@ -35,14 +35,13 @@ public class LecturaDatos {
             while (!entrada.hasNextInt()) {
                 System.out.println("Valor no válido");
                 entrada.next();
-                System.out.print("Debe ser número entero positivo, los meses y dias de tu existencia no interesan: ");
+                System.out.print("Ingrese un valor válido. \n");
             }
             dato = entrada.nextInt();
             if(dato < 0){
-                System.out.println("El número debe ser positivo, pués tu vida existe y avanza");
+                System.out.println("El número debe ser positivo");
             }
         } while (dato <= 0);
-       // System.out.println("La edad ingresada como entero positivo es : " + dato);
         return dato;
     }
     
