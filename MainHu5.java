@@ -9,7 +9,7 @@ public class MainHu5 {
         System.out.println();
         recepcionista.gestionarReservas(hotel);
         recepcionista.mostrarEstadoHabitaciones(hotel);
-        hotel.dejarHabitacion();
+        recepcionista.hacerChecksOut(hotel);
         recepcionista.mostrarEstadoHabitaciones(hotel);
     }
     
