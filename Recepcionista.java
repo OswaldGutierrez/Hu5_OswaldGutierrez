@@ -4,6 +4,8 @@ public class Recepcionista {
     private Scanner scanner = new Scanner(System.in);
     LecturaDatos in = new LecturaDatos();
     Hotel hotel = new Hotel();
+    Ingresos ingresos = new Ingresos();
+    Ingresoss ingresoss = new Ingresoss();
 
 
     public void mostrarEstadoHabitaciones(Hotel hotel) {
@@ -58,7 +60,10 @@ public class Recepcionista {
             
             switch (opcion) {
                 case 1:
-                    hotel.dejarHabitacion();
+                    int pisoEntregado = hotel.dejarHabitacionPrueba(); // Obtener el número del piso de la habitación entregada
+                    if (pisoEntregado != -1) { // Verificar si la habitación se entregó correctamente
+                        ingresoss.procesarPago(pisoEntregado); // Llamar al método de Ingresos con el número de piso
+                    }
                     break;
                 case 2:
                     System.out.println("¡Gracias por utilizar nuestros servicios!");

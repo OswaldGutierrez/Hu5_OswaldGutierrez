@@ -70,4 +70,23 @@ public class Hotel {
     }
 
 
+    public int dejarHabitacionPrueba() {
+        int pisoEntregado = in.leerInt("¿En qué piso se encuentra la habitación que entregará?");
+        int numeroEntregado = in.leerInt("¿Qué número de habitación es?");
+
+        if (pisoEntregado >= 1 && pisoEntregado <= 2 && numeroEntregado >= 1 && numeroEntregado <= 5) {
+            if (habitaciones[pisoEntregado - 1][numeroEntregado - 1].equals("Ocupada")) {
+                habitaciones[pisoEntregado - 1][numeroEntregado - 1] = "Disponible";
+                System.out.println("Habitación en el piso " + pisoEntregado + " y número " + numeroEntregado + " ha finalizado su estadía.");
+                return pisoEntregado; // Devolver el número del piso de la habitación entregada
+            } else {
+                System.out.println("La habitación en el piso " + pisoEntregado + " y número " + numeroEntregado + " ya ha sido abandonada.");
+            }
+        } else {
+            System.out.println("La habitación especificada no existe en el hotel.");
+        }
+        return -1; // Si la habitación no se entregó correctamente, retornamos -1
+    }
+
+
 }
