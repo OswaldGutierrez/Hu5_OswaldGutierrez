@@ -4,7 +4,6 @@ public class Recepcionista {
     private Scanner scanner = new Scanner(System.in);
     LecturaDatos in = new LecturaDatos();
     Hotel hotel = new Hotel();
-    Ingresos ingresos = new Ingresos();
     Ingresoss ingresoss = new Ingresoss();
 
 

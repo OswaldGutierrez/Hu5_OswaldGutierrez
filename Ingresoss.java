@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Ingresoss {
     private Scanner scanner = new Scanner(System.in);
 
+    private double totalAcumulado = 0;
+
     public void procesarPago(int piso) {
         double costoHabitacion = (piso == 1) ? 375000 : 415000;
         
@@ -11,28 +13,29 @@ public class Ingresoss {
         System.out.println("Seleccione el método de pago:");
         System.out.println("1. Transferencia");
         System.out.println("2. Efectivo");
-        System.out.println("3. Tarjeta");
+        System.out.println("3. Tarjeta \t (Este método cuenta con un recargo del 10 porciento del costo de la habitación.)");
         
         int opcionPago = scanner.nextInt();
         scanner.nextLine(); // Consumir el salto de línea
 
         switch (opcionPago) {
             case 1:
-                System.out.println("Ha seleccionado pago por transferencia.");
-                // Lógica de procesamiento para pago por transferencia
+                System.out.println("Ha seleccionado pago por transferencia. \nDebe pagar: " + costoHabitacion);
                 break;
             case 2:
-                System.out.println("Ha seleccionado pago en efectivo.");
-                // Lógica de procesamiento para pago en efectivo
+                System.out.println("Ha seleccionado pago en efectivo. \nDebe pagar: " + costoHabitacion);
                 break;
             case 3:
-                System.out.println("Ha seleccionado pago con tarjeta.");
-                // Lógica de procesamiento para pago con tarjeta
+                costoHabitacion += costoHabitacion * 0.1;
+                System.out.println("Ha seleccionado pago con tarjeta. \nDebe pagar: " + costoHabitacion);
                 break;
             default:
                 System.out.println("Opción de pago no válida.");
                 break;
         }
+
+        totalAcumulado += costoHabitacion;
+        System.out.println("Total acumulado hasta el momento: $" + totalAcumulado);
     }
 }
 
