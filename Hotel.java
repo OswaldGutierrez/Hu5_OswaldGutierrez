@@ -37,6 +37,7 @@ public class Hotel {
             if (habitaciones[piso - 1][numero - 1].equals("Disponible")) {
                 habitaciones[piso - 1][numero - 1] = "Ocupada";
                 System.out.println("Habitación en el piso " + piso + " y número " + numero + " reservada con éxito.");
+                System.out.println();
             } 
             else {
                 System.out.println("La habitación en el piso " + piso + " y número " + numero + " ya está ocupada.");

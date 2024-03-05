@@ -5,15 +5,20 @@ public class Ingresoss {
 
     private double totalAcumulado = 0;
 
+    public double getTotalAcumulado() {
+        return totalAcumulado;
+    }
+
     public void procesarPago(int piso) {
         double costoHabitacion = (piso == 1) ? 375000 : 415000;
         
-        System.out.println("El costo de la habitación en el piso " + piso + " es: $" + costoHabitacion);
+        System.out.println("\tEl costo de la habitación en el piso " + piso + " es: $" + costoHabitacion);
         
-        System.out.println("Seleccione el método de pago:");
+        System.out.println("\tSeleccione el método de pago:");
         System.out.println("1. Transferencia");
         System.out.println("2. Efectivo");
         System.out.println("3. Tarjeta \t (Este método cuenta con un recargo del 10 porciento del costo de la habitación.)");
+        System.out.println();
         
         int opcionPago = scanner.nextInt();
         scanner.nextLine(); // Consumir el salto de línea

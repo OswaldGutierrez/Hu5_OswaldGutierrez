@@ -55,7 +55,7 @@ public class Recepcionista {
             System.out.println("2. No");
             
             int opcion = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea
+            scanner.nextLine(); 
             
             switch (opcion) {
                 case 1:
